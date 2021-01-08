@@ -10,13 +10,37 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var characterDetail : SWCharacterList?
+    
+    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var massLabel: UILabel!
+    @IBOutlet weak var hairColorLabel: UILabel!
+    @IBOutlet weak var skinColorLabel: UILabel!
+    @IBOutlet weak var eyesColorLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var birthYearLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if characterDetail?.getImage() == nil {
+            avatarImage.image = UIImage(named: "placeholder")
+        }else {
+            avatarImage.image = characterDetail?.getImage()
+        }
+        nameLabel.text = "Name: \(characterDetail?.name)"
+        heightLabel.text = "Height: \(characterDetail?.height)"
+        massLabel.text = "Mass: \(characterDetail?.mass)"
+        hairColorLabel.text = "Hair Color: \(characterDetail?.hair_color)"
+        skinColorLabel.text = "Skin Color: \(characterDetail?.skin_color)"
+        eyesColorLabel.text = "Eyes Color: \(characterDetail?.eye_color)"
+        genderLabel.text = "Gender: \(characterDetail?.gender)"
+        birthYearLabel.text = "Birth Year: \(characterDetail?.birth_year)"
     }
     
-
     /*
     // MARK: - Navigation
 

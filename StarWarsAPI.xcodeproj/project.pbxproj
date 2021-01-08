@@ -16,6 +16,8 @@
 		ED799C5325A792C40005B561 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED799C5225A792C40005B561 /* TableViewController.swift */; };
 		ED799C5525A792F20005B561 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED799C5425A792F20005B561 /* CollectionViewController.swift */; };
 		ED799C5725A793230005B561 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED799C5625A793230005B561 /* DetailViewController.swift */; };
+		ED799C5A25A798980005B561 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED799C5925A798980005B561 /* UIImage+Extensions.swift */; };
+		ED799C5C25A898200005B561 /* StarWarsCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED799C5B25A898200005B561 /* StarWarsCharacters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		ED799C5225A792C40005B561 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		ED799C5425A792F20005B561 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		ED799C5625A793230005B561 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		ED799C5925A798980005B561 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		ED799C5B25A898200005B561 /* StarWarsCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharacters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +66,28 @@
 		ED799C3D25A78F300005B561 /* StarWarsAPI */ = {
 			isa = PBXGroup;
 			children = (
+				ED799C5825A798560005B561 /* Exentions */,
 				ED799C3E25A78F300005B561 /* AppDelegate.swift */,
 				ED799C4025A78F300005B561 /* SceneDelegate.swift */,
 				ED799C4225A78F300005B561 /* ViewController.swift */,
+				ED799C5225A792C40005B561 /* TableViewController.swift */,
+				ED799C5425A792F20005B561 /* CollectionViewController.swift */,
+				ED799C5625A793230005B561 /* DetailViewController.swift */,
 				ED799C4425A78F300005B561 /* Main.storyboard */,
 				ED799C4725A78F340005B561 /* Assets.xcassets */,
 				ED799C4925A78F340005B561 /* LaunchScreen.storyboard */,
 				ED799C4C25A78F340005B561 /* Info.plist */,
-				ED799C5225A792C40005B561 /* TableViewController.swift */,
-				ED799C5425A792F20005B561 /* CollectionViewController.swift */,
-				ED799C5625A793230005B561 /* DetailViewController.swift */,
+				ED799C5B25A898200005B561 /* StarWarsCharacters.swift */,
 			);
 			path = StarWarsAPI;
+			sourceTree = "<group>";
+		};
+		ED799C5825A798560005B561 /* Exentions */ = {
+			isa = PBXGroup;
+			children = (
+				ED799C5925A798980005B561 /* UIImage+Extensions.swift */,
+			);
+			path = Exentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +163,9 @@
 			files = (
 				ED799C4325A78F300005B561 /* ViewController.swift in Sources */,
 				ED799C3F25A78F300005B561 /* AppDelegate.swift in Sources */,
+				ED799C5C25A898200005B561 /* StarWarsCharacters.swift in Sources */,
 				ED799C4125A78F300005B561 /* SceneDelegate.swift in Sources */,
+				ED799C5A25A798980005B561 /* UIImage+Extensions.swift in Sources */,
 				ED799C5725A793230005B561 /* DetailViewController.swift in Sources */,
 				ED799C5325A792C40005B561 /* TableViewController.swift in Sources */,
 				ED799C5525A792F20005B561 /* CollectionViewController.swift in Sources */,
@@ -298,6 +314,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StarWarsAPI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,6 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StarWarsAPI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
