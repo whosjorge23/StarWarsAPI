@@ -19,12 +19,8 @@ struct SWCharacterList: Decodable {
     var eye_color: String
     var birth_year: String
     var gender: String
-    var films: [FilmsList]
+//    var films: [FilmsList]?
 //    var vehicles: [VehiclesList]?
-    
-    static func imageForPlaceHolder() -> UIImage {
-        return UIImage(named: "placeholder")!
-    }
     
     func getImage() -> UIImage? {
         let apiUrl = "http://mobile.aws.skylabs.it/mobileassignments/swapi/"
@@ -32,7 +28,7 @@ struct SWCharacterList: Decodable {
         let charID = urlPieces[urlPieces.count-1]
         guard let imgUrl = URL(string: apiUrl + "\(charID).png") else {
             
-            return UIImage.imageForPlaceHolder()
+            return nil
         }
         print(imgUrl)
         
@@ -60,10 +56,10 @@ struct SWCharacter {
     static let swapi = "https://swapi.dev/api/people/"
     static let charactersCount = 82
     
-    static func getCharacter(_ charCtrl: TableViewController) -> [SWCharacterList] {
+    static func getCharacter(_ charCtrl: TableViewController, _ page : Int) -> [SWCharacterList] {
         
         let decoder = JSONDecoder()
-        let url = URL(string: swapi+"?limit=\(charactersCount)")
+        let url = URL(string: swapi+"?limit=\(charactersCount)&page=\(page)")
         let urlSession = URLSession.shared
         let task = urlSession.dataTask(with:url!) {
             (data,response,error) in
@@ -105,10 +101,10 @@ struct SWCharacter {
         return[]
     }
     
-    static func getCharacterCollection(_ charCtrl: CollectionViewController) -> [SWCharacterList] {
+    static func getCharacterCollection(_ charCtrlCollection: CollectionViewController,_ page : Int) -> [SWCharacterList] {
         
         let decoder = JSONDecoder()
-        let url = URL(string: swapi+"?limit=\(charactersCount)")
+        let url = URL(string: swapi+"?limit=\(charactersCount)&page=\(page)")
         let urlSession = URLSession.shared
         let task = urlSession.dataTask(with:url!) {
             (data,response,error) in
@@ -138,8 +134,8 @@ struct SWCharacter {
             
             if jsonData != nil {
                 DispatchQueue.main.async {
-                    charCtrl.characters = (jsonData?.results)!
-                    charCtrl.collectionView.reloadData()
+                    charCtrlCollection.characters = (jsonData?.results)!
+                    charCtrlCollection.collectionView.reloadData()
                 }
             }
             
@@ -152,5 +148,8 @@ struct SWCharacter {
 }
 
 struct FilmsList:Decodable {
+    var title: String
+    var release_date: String
+    var opening_crawl: String
     
 }

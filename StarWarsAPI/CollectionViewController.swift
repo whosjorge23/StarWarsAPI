@@ -12,21 +12,21 @@ private let reuseIdentifier = "CollectionCell"
 
 class CollectionViewController: UICollectionViewController {
     
-    
     var characters:[SWCharacterList] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let pages = [1,2]
+        let random = pages.randomElement()!
+        SWCharacter.getCharacterCollection(self, random)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        SWCharacter.getCharacterCollection(self)
         // Do any additional setup after loading the view.
-        
     }
 
     /*
@@ -53,12 +53,34 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomViewCell
     
-//        cell.textLabel?.text = "Caio"
-//        cell.imageView?.image = UIImage(named: "placeholder")
+        let char = characters[indexPath.row]
+        cell.avatarName.text = char.name
+        
+        if char.getImage() == nil {
+            cell.avatarImage.image = UIImage(named: "placeholder")
+        }else {
+            cell.avatarImage.image = char.getImage()
+        }
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let char = characters[indexPath.row]
+        performSegue(withIdentifier: "toDetail", sender: char)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toDetail" {
+            let vc = segue.destination as! DetailViewController
+            let charact = sender as! SWCharacterList
+            vc.characterDetail = charact
+
+        }
     }
 
     // MARK: UICollectionViewDelegate

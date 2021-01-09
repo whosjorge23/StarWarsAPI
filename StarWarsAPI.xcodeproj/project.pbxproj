@@ -18,6 +18,7 @@
 		ED799C5725A793230005B561 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED799C5625A793230005B561 /* DetailViewController.swift */; };
 		ED799C5A25A798980005B561 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED799C5925A798980005B561 /* UIImage+Extensions.swift */; };
 		ED799C5C25A898200005B561 /* StarWarsCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED799C5B25A898200005B561 /* StarWarsCharacters.swift */; };
+		ED799C5E25A99BCC0005B561 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED799C5D25A99BCC0005B561 /* CustomViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		ED799C5625A793230005B561 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ED799C5925A798980005B561 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		ED799C5B25A898200005B561 /* StarWarsCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharacters.swift; sourceTree = "<group>"; };
+		ED799C5D25A99BCC0005B561 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				ED799C4925A78F340005B561 /* LaunchScreen.storyboard */,
 				ED799C4C25A78F340005B561 /* Info.plist */,
 				ED799C5B25A898200005B561 /* StarWarsCharacters.swift */,
+				ED799C5D25A99BCC0005B561 /* CustomViewCell.swift */,
 			);
 			path = StarWarsAPI;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				ED799C5A25A798980005B561 /* UIImage+Extensions.swift in Sources */,
 				ED799C5725A793230005B561 /* DetailViewController.swift in Sources */,
 				ED799C5325A792C40005B561 /* TableViewController.swift in Sources */,
+				ED799C5E25A99BCC0005B561 /* CustomViewCell.swift in Sources */,
 				ED799C5525A792F20005B561 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

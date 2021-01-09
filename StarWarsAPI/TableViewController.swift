@@ -14,8 +14,9 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        SWCharacter.getCharacter(self)
+        let pages = [1,2]
+        let random = pages.randomElement()!
+        SWCharacter.getCharacter(self, random)
     }
 
     // MARK: - Table view data source
@@ -41,7 +42,6 @@ class TableViewController: UITableViewController {
             cell.imageView?.image = char.getImage()
         }
         
-
         return cell
     }
     

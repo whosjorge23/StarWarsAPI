@@ -31,14 +31,14 @@ class DetailViewController: UIViewController {
         }else {
             avatarImage.image = characterDetail?.getImage()
         }
-        nameLabel.text = "Name: \(characterDetail?.name)"
-        heightLabel.text = "Height: \(characterDetail?.height)"
-        massLabel.text = "Mass: \(characterDetail?.mass)"
-        hairColorLabel.text = "Hair Color: \(characterDetail?.hair_color)"
-        skinColorLabel.text = "Skin Color: \(characterDetail?.skin_color)"
-        eyesColorLabel.text = "Eyes Color: \(characterDetail?.eye_color)"
-        genderLabel.text = "Gender: \(characterDetail?.gender)"
-        birthYearLabel.text = "Birth Year: \(characterDetail?.birth_year)"
+        nameLabel.text = "Name: \(characterDetail?.name ?? "")"
+        heightLabel.text = "Height: \(characterDetail?.height ?? "")"
+        massLabel.text = "Mass: \(characterDetail?.mass ?? "")"
+        hairColorLabel.text = "Hair Color: \(characterDetail?.hair_color ?? "")"
+        skinColorLabel.text = "Skin Color: \(characterDetail?.skin_color ?? "")"
+        eyesColorLabel.text = "Eyes Color: \(characterDetail?.eye_color ?? "")"
+        genderLabel.text = "Gender: \(characterDetail?.gender ?? "")"
+        birthYearLabel.text = "Birth Year: \(characterDetail?.birth_year ?? "")"
     }
     
     /*
