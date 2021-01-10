@@ -24,31 +24,23 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.systemYellow]
+        
         if characterDetail?.getImage() == nil {
             avatarImage.image = UIImage(named: "placeholder")
         }else {
             avatarImage.image = characterDetail?.getImage()
         }
-        nameLabel.text = "Name: \(characterDetail?.name ?? "")"
-        heightLabel.text = "Height: \(characterDetail?.height ?? "")"
-        massLabel.text = "Mass: \(characterDetail?.mass ?? "")"
-        hairColorLabel.text = "Hair Color: \(characterDetail?.hair_color ?? "")"
-        skinColorLabel.text = "Skin Color: \(characterDetail?.skin_color ?? "")"
-        eyesColorLabel.text = "Eyes Color: \(characterDetail?.eye_color ?? "")"
-        genderLabel.text = "Gender: \(characterDetail?.gender ?? "")"
+        nameLabel.text = "Name: \(characterDetail?.name ?? "")".capitalized
+        heightLabel.text = "Height: \(characterDetail?.height ?? "")".capitalized
+        massLabel.text = "Mass: \(characterDetail?.mass ?? "")".capitalized
+        hairColorLabel.text = "Hair Color: \(characterDetail?.hair_color ?? "")".capitalized
+        skinColorLabel.text = "Skin Color: \(characterDetail?.skin_color ?? "")".capitalized
+        eyesColorLabel.text = "Eyes Color: \(characterDetail?.eye_color ?? "")".capitalized
+        genderLabel.text = "Gender: \(characterDetail?.gender ?? "")".capitalized
         birthYearLabel.text = "Birth Year: \(characterDetail?.birth_year ?? "")"
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
